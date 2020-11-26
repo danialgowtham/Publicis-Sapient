@@ -1,0 +1,74 @@
+<div class="container m-2">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<div class="card mb-2">
+				<p class="mx-auto h6">Filter</p>
+				<div class="filter">
+					<span>Launch Year</span>
+					<div class="container row">
+						<div class="col-6 col-sm-6 col-md-6 col-xs-6"
+							*ngFor="let year of filter?.launch_year; let i = index">
+							<button [ngClass]="{'active':year?.isActive}"  type="button" (click)="applyFilter('launch_year',year?.text,i)" class="btn btn-success">{{year?.text}}</button>
+						</div>
+					</div>
+				</div>
+				<div class="filter">
+					<span>Successful Launch</span>
+					<div class="container row">
+						<div class="col-6 col-sm-6 col-md-6 col-xs-6"
+							*ngFor="let launch of filter?.launch_success; let i = index">
+							<button  [ngClass]="{'active':launch?.isActive}"    type="button" class="btn btn-success" (click)="applyFilter('launch_success',launch?.text,i)">{{launch?.text}}</button>
+						</div>
+					</div>
+				</div>
+				<div class="filter">
+					<span>Successful landing</span>
+					<div class="container row">
+						<div class="col-6 col-sm-6 col-md-6 col-xs-6"
+							*ngFor="let landing of filter?.land_success; let i = index">
+							<button  [ngClass]="{'active':landing?.isActive}"   type="button" class="btn btn-success" (click)="applyFilter('land_success',landing?.text,i)">{{landing?.text}}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3" *ngFor="let data of filteredData">
+					<div class="card item mb-2 p-2">
+						<img class="filter-img img-fluid" [src]="data?.links?.mission_patch" >
+						<div class="item-body">
+							<span class="item-header">
+              {{data?.mission_name + ' #' + data?.flight_number}}
+            </span>
+							<div>
+								<span class="item-sub-hearder">
+                Mission ids:<p class="item-sub-detail">{{data?.mission_id}}</p>
+              </span>
+							</div>
+							<div>
+								<span class="item-sub-hearder">
+                launch year:<p class="item-sub-detail">{{data?.launch_year}}</p>
+              </span>
+							</div>
+							<div>
+								<span class="item-sub-hearder">
+                Successful launch:<p class="item-sub-detail">{{data?.launch_success}}</p>
+              </span>
+							</div>
+							<div>
+								<span class="item-sub-hearder">
+                Successful landing:<p class="item-sub-detail">{{data?.launch_landing}}</p>
+              </span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<span> Developed By : Gowdham K
+      </span>
+		</div>
+	</div>
+</div>

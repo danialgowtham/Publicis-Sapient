@@ -1,0 +1,42 @@
+p {
+  font-family: Lato;
+}
+
+.card p {
+  font-weight: bold;
+}
+.filter span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #adb5bd;
+}
+.filter {
+  margin-bottom: 20px;
+}
+.btn-success {
+  margin: 10px;
+}
+.filter-img {
+  background: #ccc;
+  padding: 10px;
+}
+.custom-margin {
+  margin: 0px 20px 20px 20px;
+  padding: 10px;
+}
+.item {
+  margin: auto;
+}
+.item-header {
+  font-weight: bold;
+  color: #3744e0;
+}
+
+.item-sub-hearder {
+  font-weight: bold;
+}
+.item-sub-detail {
+  font-weight: lighter !important;
+}
